@@ -1,22 +1,24 @@
 
 import random
 word_list = ["aardvark", "baboon", "camel"]
-
 random.shuffle(word_list)
 word = word_list[0].lower()
 print(word)
 placeholder = ""
-display = ""
+isGameOver = False
+display = ["_"] * len(word)
 
-for letter in range(1, len(word) + 1):
-    placeholder += "_"
-print(placeholder)
+print("".join(display))
 
-guessed_letter = input("Enter Letter: ")
+while not isGameOver:
+    guessed_letter = input("Guess a letter: ").lower()
+    for index, letter in enumerate(word):
+        if letter == guessed_letter:
+            display[index] = letter
+    print("".join(display))
 
-for letter in word:
-    if letter == guessed_letter:
-        display += guessed_letter
-    else:
-        display += "_"
-print(display)
+    if "_" not in display:
+        print("You win!")
+        isGameOver = True
+
+
