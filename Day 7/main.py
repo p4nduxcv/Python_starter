@@ -1,6 +1,7 @@
 
 import random
-word_list = ["aardvark", "baboon", "camel"]
+from hangman_words import word_list
+
 random.shuffle(word_list)
 word = word_list[0].lower()
 print(word)
