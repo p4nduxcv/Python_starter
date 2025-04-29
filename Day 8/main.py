@@ -31,4 +31,5 @@ for key in bid_records:
     if bid_amount > highest_bid:
         highest_bid = bid_amount
         highest_bidder = bid_records[key]["name"]
+
 print(highest_bidder)
