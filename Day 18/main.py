@@ -1,23 +1,19 @@
 from turtle import Turtle, Screen
 import random
+from colors import ColorsList
 
 timmy_the_turtle = Turtle()
 timmy_the_turtle.shape("turtle")
 timmy_the_turtle.speed(2)
-colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-
-def draw_shape(leg_count):
-    angle = 360/leg_count
-    for _ in range(leg_count):
-        timmy_the_turtle.forward(100)
-        timmy_the_turtle.left(angle)
+timmy_the_turtle.width(5)
 
 
-#Squar
-for num_of_legs in range(3, 10):
-    timmy_the_turtle.color(random.choice(colors))
-    draw_shape(num_of_legs)
+dir = [0, 90, 180, 270]
 
+for _ in range(200):
+    timmy_the_turtle.forward(50)
+    timmy_the_turtle.left(random.choice(dir))
+    timmy_the_turtle.color(random.choice(ColorsList))
 
 
 timmy_the_turtle_screen = Screen()
