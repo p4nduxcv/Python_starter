@@ -4,10 +4,10 @@ from colors import ColorsList
 
 timmy_the_turtle = Turtle()
 timmy_the_turtle.shape("turtle")
-timmy_the_turtle.speed(2)
-timmy_the_turtle.width(5)
+timmy_the_turtle.speed("fastest")
 
-dir = [0, 90, 180, 270]
+screen = Screen()
+screen.colormode(255)
 
 def get_random_color():
     r = random.randint(0,255)
@@ -16,14 +16,21 @@ def get_random_color():
     random_color = (r,g,b)
     return random_color
 
-for _ in range(200):
-    timmy_the_turtle.forward(50)
-    timmy_the_turtle.left(random.choice(dir))
-    timmy_the_turtle.pencolor(get_random_color())
+def draw_spirograph(size_of_gap):
+
+    for _ in range(int(360/size_of_gap)):
+        timmy_the_turtle.color(get_random_color())
+        timmy_the_turtle.circle(100)
+        timmy_the_turtle.setheading(timmy_the_turtle.heading()+size_of_gap)
+        print(timmy_the_turtle.heading())
 
 
-timmy_the_turtle_screen = Screen()
-timmy_the_turtle_screen.exitonclick()
+draw_spirograph(1)
+
+
+
+
+screen.exitonclick()
 
 
 
