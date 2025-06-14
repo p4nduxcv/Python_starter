@@ -1,32 +1,27 @@
+import random
 from turtle import Turtle, Screen
 
-tim = Turtle()
+
 screen = Screen()
+screen.setup(500,600)
+user_bet = screen.textinput("Make your bet", "Which turtle will win the game ?")
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
 
-# this is a Eventlistner
-def move_forward():
-    tim.forward(10)
+turtles = []
 
-def move_right():
-    new_heading = tim.heading() - 10
-    tim.setheading(new_heading)
+for i in range(6):
+    tim = Turtle()
+    tim.color(colors[i])
+    tim.shape("turtle")
+    turtles.append(tim)
 
-def move_left():
-    new_heading = tim.heading() + 10
-    tim.setheading(new_heading)
 
-def move_backward():
-    tim.backward(10)
 
-def clean():
-    tim.clear()
+for i in range(0, len(turtles)):
+    turtles[i].penup()
+    turtles[i].goto(-250,-200 + i*100)
 
-screen.listen()
-screen.onkey(move_forward,"w")
-screen.onkey(move_right,"d")
-screen.onkey(move_left,"a")
-screen.onkey(move_backward,"s")
-screen.onkey(clean,"c")
+
 screen.exitonclick()
 
 
