@@ -10,11 +10,9 @@ colors = ["red", "orange", "yellow", "green", "blue", "purple"]
 turtles = []
 
 for i in range(6):
-    tim = Turtle()
+    tim = Turtle(shape="turtle")
     tim.color(colors[i])
-    tim.shape("turtle")
     turtles.append(tim)
-
 
 
 for i in range(0, len(turtles)):
