@@ -2,12 +2,17 @@ from turtle import Turtle
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]  #0, 1, 2
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
+        self.head = self.segments[0]
 
 
     def create_snake(self):
@@ -24,5 +29,22 @@ class Snake:
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)
 
-            self.segments[0].forward(MOVE_DISTANCE)
-            self.segments[0].left(90)
+        self.head.forward(MOVE_DISTANCE)
+            # self.head.left(90)
+
+    def up(self):
+        if self.head.setheading != DOWN:
+            self.head.setheading(UP)
+
+    def down(self):
+        if self.head.setheading != UP:
+            self.head.setheading(DOWN)
+
+    def left(self):
+        if self.head.setheading != RIGHT:
+            self.head.setheading(LEFT)
+
+    def right(self):
+        if self.head.setheading != LEFT:
+            self.head.setheading(RIGHT)
+
