@@ -14,6 +14,10 @@ class ScoreBoard(Turtle):
         self.clear()  # Clear the previous score text
         self.write(f"Score : {self.score}", move=False, align='center', font=('Arial', 16, 'normal'))
 
-    def scorecard(self):
+    def score_card(self):
         self.score += 1
         self.update_score_display()
+
+    def final_score_card(self):
+        self.goto(0, 0)
+        self.write(f"Game Over!", move=False, align='center', font=('Arial', 16, 'normal'))
