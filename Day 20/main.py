@@ -35,10 +35,8 @@ while game_is_on:
         scoreboard.final_score_card()
         game_is_on = False
 
-    for segment in snake.segments:
-        if snake.head == segment:
-            pass
-        elif snake.head.distance(segment) < 10:
+    for segment in snake.segments[1:len(snake.segments)]:
+        if snake.head.distance(segment) < 10:
             scoreboard.final_score_card()
             game_is_on = False
 
