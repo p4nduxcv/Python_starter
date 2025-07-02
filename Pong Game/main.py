@@ -4,15 +4,16 @@ from paddle import Paddle
 screen = Screen()
 screen.setup(800, 600)
 screen.tracer(0)
-paddle = Paddle()
+r_paddle = Paddle((350,0))
+l_paddle = Paddle((-350,0))
 is_game_one = True
 
 while is_game_one:
     screen.update()
     screen.listen()
 
-    screen.onkey(paddle.go_up, "Up")
-    screen.onkey(paddle.go_down, "Down")
+    screen.onkey(r_paddle.go_up, "Up")
+    screen.onkey(r_paddle.go_down, "Down")
 
 
 
