@@ -33,7 +33,7 @@ while is_game_one:
 
     if ball.xcor() > 380:
         ball.reset_position()
-        scoreboard.l_point()
+        scoreboard.r_point()
 
     if ball.xcor() < -380:
         ball.reset_position()
