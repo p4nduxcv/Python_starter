@@ -20,6 +20,12 @@ while game_is_on:
     car_manager.move_car()
 
 
+    for car in car_manager.all_cars:
+
+        if car.distance(player) < 25:
+            game_is_on = False
+
+
 
 
 
