@@ -24,7 +24,6 @@ while is_game_one:
     screen.listen()
     ball.move()
 
-
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
 
@@ -38,7 +37,5 @@ while is_game_one:
     if ball.xcor() < -380:
         ball.reset_position()
         scoreboard.l_point()
-
-
 
 screen.exitonclick()
