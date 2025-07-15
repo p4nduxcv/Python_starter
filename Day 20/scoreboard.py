@@ -8,12 +8,17 @@ class ScoreBoard(Turtle):
         self.penup()
         self.goto(0, 280)
         self.hideturtle()
-        self.high_score = 0
+        try:
+            with open("scoreboard.txt") as data:
+                self.high_score = int(data.read())
+        except FileNotFoundError:
+            self.high_score = 0
         self.update_score_display()
 
 
     def update_score_display(self):
         self.clear()  # Clear the previous score text
+
         self.write(f"Score : {self.score}  High Score : {self.high_score}", move=False, align='center', font=('Arial', 16, 'normal'))
 
     def score_card(self):
@@ -23,6 +28,9 @@ class ScoreBoard(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
+            with open("scoreboard.txt", mode="w") as f:
+                f.write(str(self.high_score))
+
         self.score = 0
         self.update_score_display()
 
