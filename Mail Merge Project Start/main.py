@@ -3,7 +3,6 @@ import os
 
 with open("Input/Letters/starting_letter.txt") as starting_letter:
     contents = starting_letter.read()
-    match = re.search(r'\[(.*?)\]', contents)
 
 with open("Input/Names/invited_names.txt") as invited_names:
     # contents = invited_names.readline()
