@@ -1,4 +1,3 @@
-import re
 import os
 
 with open("Input/Letters/starting_letter.txt") as starting_letter:
