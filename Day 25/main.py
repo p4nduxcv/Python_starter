@@ -21,7 +21,7 @@ average_temp = sum(temp_list) / len(temp_list)
 
 # print(data["temp"].max())
 
-# print(data[data.day == "Monday"])
+print(data[data.day == "Monday"])
 
 highest_temp = data.temp.max()
 highest_temp_day = data[data.temp == highest_temp].day.values[0]
